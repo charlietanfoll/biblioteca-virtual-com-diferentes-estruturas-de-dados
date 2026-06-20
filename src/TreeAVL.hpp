@@ -1,5 +1,9 @@
 #include <iostream>
 #include <string>
+#include <memory>
+#include "NodeTree.hpp"
+
+using namespace std;
 
 class TreeAVL {
     public:
@@ -14,6 +18,7 @@ class TreeAVL {
     }
 
     private:
+    unique_ptr<Node> root;
     
 
 };
