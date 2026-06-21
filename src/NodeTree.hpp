@@ -7,6 +7,7 @@ struct Node {
     int ano_publicacao;
     string titulo;
     string autor;
+    int balance;
     unique_ptr<Node> left;
     unique_ptr<Node> right;
 };
