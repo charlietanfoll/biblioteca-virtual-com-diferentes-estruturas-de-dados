@@ -1,5 +1,10 @@
 #include <iostream>
+#include <string>
+#include "BinaryTree.hpp"
 
-int main(int, char**){
-    std::cout << "Hello, from biblioteca-virtual-com-diferentes-estrutura-de-dados!\n";
+
+int main() {
+    BinaryTree tree;
+
+    return 0;
 }
