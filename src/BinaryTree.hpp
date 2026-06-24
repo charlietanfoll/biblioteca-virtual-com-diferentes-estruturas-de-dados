@@ -13,22 +13,23 @@ class BinaryTree {
     BinaryTree() = default;
     ~BinaryTree() = default;
 
-    void search(int isbn) {
+    int search(int isbn) {
         Node * current = root.get();
+        int comparisons = 0;
         if (root == nullptr) {
-            return;
+            return comparisons;
         }
         while (current != nullptr) {
+            comparisons++;
             if (current->isbn == isbn) {
-                printnode(current);
-                return;
+                return comparisons;
             } else if (isbn < current->isbn) {
                 current = current->left.get();
             } else {
                 current = current->right.get();
             }
         }
-        cout << "Livro não encontrado";
+        return comparisons;
     };
 
     void insert(int key, int ano_publicacao, string & titulo, string & autor) {
@@ -53,6 +54,7 @@ class BinaryTree {
                 return;
             }
         }
+
         if (key < parent->isbn) {
             parent->left = make_unique<Node>(key, ano_publicacao, titulo, autor);
         } else {
