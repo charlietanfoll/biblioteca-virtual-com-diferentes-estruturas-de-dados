@@ -17,6 +17,7 @@ class BinaryTree {
         Node * current = root.get();
         int comparisons = 0;
         if (root == nullptr) {
+            cout << "Livro nao encontrado" << endl;
             return comparisons;
         }
         while (current != nullptr) {
@@ -29,6 +30,7 @@ class BinaryTree {
                 current = current->right.get();
             }
         }
+        cout << "Livro nao encontrado" << endl;
         return comparisons;
     };
 
@@ -75,9 +77,9 @@ class BinaryTree {
             }
         }
 
-        // Se o ponteiro apontado for nulo, o livro não existe
+        // Se o ponteiro apontado for nulo, o livro nao existe
         if (!*current) {
-            cout << "Livro com ISBN {" << key << "} não encontrado!" << endl;
+            cout << "Livro com ISBN {" << key << "} nao encontrado!" << endl;
             return;
         }
 

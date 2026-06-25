@@ -2,6 +2,7 @@
 #include <string>
 #include "BinaryTree.hpp"
 #include "Lista.hpp"
+#include "hashtable.hpp"
 
 using namespace std;
 
@@ -16,7 +17,7 @@ struct booktemp {
 int main() {
     BinaryTree tree;
     ListaEstatica lista;
-    hashTable hash;
+    TabelaHash hash;
     auto input = 0;
 
 
@@ -39,13 +40,6 @@ int main() {
                 booktemp booktemp = {};
                 cout << "ISBN: ";
                 cin >> booktemp.isbn;
-                cout << "Ano de Publicacao: ";
-                cin >> booktemp.ano_publicacao;
-                cin.ignore();
-                cout << "Titulo do livro: ";
-                getline(cin, booktemp.titulo);
-                cout << "Autor: " << endl;
-                getline(cin, booktemp.autor);
                 tree.insert(booktemp.isbn, booktemp.ano_publicacao, booktemp.titulo, booktemp.autor);
                 lista.insert(booktemp.isbn, booktemp.ano_publicacao, booktemp.titulo, booktemp.autor);
                 hash.insert(booktemp.isbn, booktemp.ano_publicacao, booktemp.titulo, booktemp.autor);
@@ -57,11 +51,11 @@ int main() {
                 booktemp booktemp = {};
                 cin >> booktemp.isbn;
                 int treeresult = tree.search(booktemp.isbn);
-                cout << "Comparações feitas: " << treeresult << endl;
+                cout << "Comparacoes feitas: " << treeresult << endl;
                 int listresult = lista.search(booktemp.isbn);
-                cout << "Comparações feitas: " << listresult << endl;
+                cout << "Comparacoes feitas: " << listresult << endl;
                 int hashresult = hash.search(booktemp.isbn);
-                cout << "Comparações feitas: " << hashresult << endl;
+                cout << "Comparacoes feitas: " << hashresult << endl;
                 cout << endl;
                 break;
             }
@@ -75,11 +69,16 @@ int main() {
                 cout << endl;
                 break;
             }
+            case 4: {
+                cout << "Fim!" << endl;
+                break;
+            }
+            default: {
+                cout << "Opção inválida" << endl;
+                break;
+            }
+
         }
     }
-
-
     return 0;
 }
-
-

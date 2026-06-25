@@ -1,3 +1,4 @@
+#pragma once
 #ifndef LISTAESTATICA_HPP
 #define LISTAESTATICA_HPP
 
@@ -71,7 +72,7 @@ public:
         }
 
         if (p == -1) {
-            std::cout << "Livro com ISBN " << isbn << " não encontrado." << std::endl;
+            std::cout << "Livro com ISBN " << isbn << " nao encontrado." << std::endl;
             return;
         }
 
@@ -84,21 +85,16 @@ public:
 
     int search(int isbn) {
         int comparacoes = 0;
-
         for (int i = 1; i <= n; i++) {
             comparacoes++;
-
             if (entry[i].isbn == isbn) {
                 return comparacoes;
             }
-
             if (entry[i].isbn > isbn) {
-                std::cout << "Livro não encontrado" << std::endl;
-                return comparacoes;
+                break;
             }
         }
-
-        std::cout << "Livro não encontrado" << std::endl;
+        std::cout << "Livro nao encontrado" << std::endl;
         return comparacoes;
     }
 
